@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b322n1p37lao0"]
+
+[ext_resource type="Script" uid="uid://dx4vrel86omys" path="res://scripts/menu_multiplayer.gd" id="1_4eegg"]
+
+[node name="Menu" type="Node" unique_id=1517633204]
+
+[node name="Layer" type="CanvasLayer" parent="." unique_id=1221287225]
+
+[node name="Menu" type="CenterContainer" parent="Layer" unique_id=1775114911 node_paths=PackedStringArray("port_line_edit") groups=["Menu"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4eegg")
+port_line_edit = NodePath("Column/Row/Port")
+
+[node name="Column" type="VBoxContainer" parent="Layer/Menu" unique_id=2121053164]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+
+[node name="Border" type="MarginContainer" parent="Layer/Menu/Column" unique_id=911013241]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Layer/Menu/Column/Border" unique_id=1553273026]
+layout_mode = 2
+text = "Host a lobby"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Host" type="Button" parent="Layer/Menu/Column" unique_id=627580815]
+layout_mode = 2
+text = "Host"
+
+[node name="Border2" type="MarginContainer" parent="Layer/Menu/Column" unique_id=739003540]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Layer/Menu/Column/Border2" unique_id=641141270]
+layout_mode = 2
+text = "Join a lobby"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row" type="HBoxContainer" parent="Layer/Menu/Column" unique_id=1688387382]
+layout_mode = 2
+
+[node name="Port" type="LineEdit" parent="Layer/Menu/Column/Row" unique_id=805000729]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Port"
+
+[node name="Join" type="Button" parent="Layer/Menu/Column/Row" unique_id=1011911797]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Join Lobby"
+
+[node name="Margin" type="MarginContainer" parent="Layer/Menu/Column" unique_id=2051247401]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Back" type="Button" parent="Layer/Menu/Column" unique_id=483531808]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="Layer/Menu/Column/Host" to="Layer/Menu" method="_on_host_pressed"]
+[connection signal="text_changed" from="Layer/Menu/Column/Row/Port" to="Layer/Menu" method="_on_port_text_changed"]
+[connection signal="pressed" from="Layer/Menu/Column/Row/Join" to="Layer/Menu" method="_on_join_pressed"]
+[connection signal="pressed" from="Layer/Menu/Column/Back" to="Layer/Menu" method="_on_back_pressed"]

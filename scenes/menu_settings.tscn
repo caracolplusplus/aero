@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cammecaq3w5dw"]
+
+[ext_resource type="Texture2D" uid="uid://mgal7idfuhr1" path="res://icon.svg" id="1_t4ura"]
+
+[node name="Menu" type="Node" unique_id=1517633204]
+
+[node name="Layer" type="CanvasLayer" parent="." unique_id=1221287225]
+
+[node name="Menu" type="CenterContainer" parent="Layer" unique_id=1775114911 groups=["Menu"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Column" type="VBoxContainer" parent="Layer/Menu" unique_id=2121053164]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+
+[node name="Border" type="MarginContainer" parent="Layer/Menu/Column" unique_id=1499238020]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Texture" type="TextureRect" parent="Layer/Menu/Column/Border" unique_id=1185154070]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("1_t4ura")
+expand_mode = 2
+stretch_mode = 5

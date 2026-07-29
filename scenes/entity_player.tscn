@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://clfs0sckfg7mq"]
+
+[ext_resource type="Script" uid="uid://cnbnbiyarm0uh" path="res://scripts/entity_player.gd" id="1_l3kgs"]
+[ext_resource type="PackedScene" uid="uid://dsf3lb6rrpryk" path="res://scenes/display_player.tscn" id="2_dka8e"]
+[ext_resource type="PackedScene" uid="uid://b0nc6j1n14jmb" path="res://scenes/entity_camera.tscn" id="2_kcvqk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hxq0j"]
+margin = 0.1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hxq0j"]
+radius = 0.25
+height = 0.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1l4c8"]
+radius = 0.4
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_l3kgs"]
+properties/0/path = NodePath(".:scale")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:health")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:stamina")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:team")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:alive")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath(".:rotation")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+properties/6/path = NodePath(".:replicated_position")
+properties/6/spawn = true
+properties/6/replication_mode = 2
+properties/7/path = NodePath("Collider:disabled")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+
+[node name="Player" type="CharacterBody3D" unique_id=1537312372 node_paths=PackedStringArray("display", "pivot", "collider") groups=["Player"]]
+top_level = true
+collision_mask = 15
+motion_mode = 1
+wall_min_slide_angle = 0.0
+platform_floor_layers = 4
+platform_wall_layers = 4
+safe_margin = 0.05
+script = ExtResource("1_l3kgs")
+display = NodePath("Display")
+pivot = NodePath("Pivot")
+collider = NodePath("Collider")
+
+[node name="Pivot" parent="." unique_id=2136772843 instance=ExtResource("2_kcvqk")]
+
+[node name="Inventory" type="Marker3D" parent="." unique_id=1536318315 groups=["Inventory"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, -0.15, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1165608869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+shape = SubResource("SphereShape3D_hxq0j")
+
+[node name="HurtboxBody" type="StaticBody3D" parent="." unique_id=413702976]
+collision_layer = 32
+collision_mask = 16
+
+[node name="Collider" type="CollisionShape3D" parent="HurtboxBody" unique_id=1691195491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("CapsuleShape3D_hxq0j")
+debug_color = Color(1, 0.6, 0.68235296, 0.41960785)
+
+[node name="HurtboxHead" type="StaticBody3D" parent="." unique_id=1460562868]
+collision_layer = 32
+collision_mask = 16
+
+[node name="Collider" type="CollisionShape3D" parent="HurtboxHead" unique_id=1083734143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_1l4c8")
+debug_color = Color(1, 0.6, 0.68235296, 0.41960785)
+
+[node name="Display" parent="." unique_id=1851179853 instance=ExtResource("2_dka8e")]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1705983781]
+replication_config = SubResource("SceneReplicationConfig_l3kgs")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bd11l8j0htmt2"]
+
+[ext_resource type="Script" uid="uid://cfnccymadewci" path="res://scripts/input_manager.gd" id="1_pxhn3"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qavl1"]
+properties/0/path = NodePath(".:actions")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:motion")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[node name="InputManager" type="Node" unique_id=1012695280]
+script = ExtResource("1_pxhn3")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=921224800]
+replication_config = SubResource("SceneReplicationConfig_qavl1")

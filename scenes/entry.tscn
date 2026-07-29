@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b067p5ni752o8"]
+
+[ext_resource type="PackedScene" uid="uid://dlnkxov17wc5t" path="res://scenes/menu_main.tscn" id="1_ycj4g"]
+[ext_resource type="Script" uid="uid://c3wkec7lx1wat" path="res://scripts/scene_manager.gd" id="2_0tit2"]
+[ext_resource type="PackedScene" uid="uid://b322n1p37lao0" path="res://scenes/menu_multiplayer.tscn" id="3_xkqy0"]
+[ext_resource type="PackedScene" uid="uid://cammecaq3w5dw" path="res://scenes/menu_settings.tscn" id="4_0tyro"]
+[ext_resource type="PackedScene" uid="uid://bcwcoh32q0nyl" path="res://scenes/menu_game.tscn" id="5_hun0w"]
+[ext_resource type="Script" uid="uid://d2hpxgjn6fwyp" path="res://scripts/world_manager.gd" id="6_hun0w"]
+
+[node name="Entry" type="Node" unique_id=1426445012]
+
+[node name="Scene" type="Node" parent="." unique_id=2112658104]
+
+[node name="Menu" parent="Scene" unique_id=1517633204 instance=ExtResource("1_ycj4g")]
+
+[node name="World" type="Node3D" parent="." unique_id=1567161422]
+
+[node name="SceneManager" type="CanvasLayer" parent="." unique_id=1282685420 node_paths=PackedStringArray("scene", "fade_out") groups=["Manager"]]
+script = ExtResource("2_0tit2")
+scene = NodePath("../Scene")
+scene_map = Dictionary[String, PackedScene]({
+"GameMenu": ExtResource("5_hun0w"),
+"MainMenu": ExtResource("1_ycj4g"),
+"MultiplayerMenu": ExtResource("3_xkqy0"),
+"SettingsMenu": ExtResource("4_0tyro")
+})
+fade_out = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="SceneManager" unique_id=1688991296]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldManager" type="MultiplayerSpawner" parent="." unique_id=2063326389 groups=["Manager"]]
+_spawnable_scenes = PackedStringArray("uid://bd11l8j0htmt2", "uid://clfs0sckfg7mq", "uid://cre8sax4egexr")
+spawn_path = NodePath("../World")
+spawn_limit = 1200
+script = ExtResource("6_hun0w")
+player_scene = 1
+stage_scenes = Dictionary[String, int]({
+"Sandbox": 2
+})

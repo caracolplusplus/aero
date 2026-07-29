@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b0nc6j1n14jmb"]
+
+[ext_resource type="Script" uid="uid://cqsk4m0p11aw5" path="res://scripts/entity_camera.gd" id="1_4f0py"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ej6ua"]
+radius = 0.1
+
+[node name="CameraRig" type="Marker3D" unique_id=2136772843 node_paths=PackedStringArray("camera") groups=["Camera"]]
+process_physics_priority = 1
+top_level = true
+script = ExtResource("1_4f0py")
+camera = NodePath("CameraArm/Camera")
+
+[node name="CameraArm" type="SpringArm3D" parent="." unique_id=28368530]
+transform = Transform3D(-1, 2.990035e-08, -8.2150535e-08, 0, 0.9396926, 0.34202012, 8.742278e-08, 0.34202012, -0.9396926, 0, 0, 0)
+collision_mask = 4
+shape = SubResource("SphereShape3D_ej6ua")
+spring_length = 2.0
+
+[node name="Camera" type="Camera3D" parent="CameraArm" unique_id=1394340260]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0, 2)
+cull_mask = 786495
