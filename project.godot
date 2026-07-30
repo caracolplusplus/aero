@@ -20,7 +20,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-NetworkManager="*uid://btb630c0mm8ip"
+NetworkMaster="*uid://dchi5t5sgwu1f"
+NetworkGame="*uid://d1s7bgqkmyu7r"
+NetworkClient="*uid://dt1xaqg7wol2n"
 GameManager="*uid://b30b6axsewpj5"
 
 [display]

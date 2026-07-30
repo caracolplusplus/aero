@@ -51,7 +51,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if GameManager.get_state() != "Loadout":
 		control.visible = false
-	elif .key_is_pressed("Buy"):
+	elif player.input.key_is_pressed("Buy"):
 		control.visible = not control.visible
 
 func select_item(index: int) -> void:

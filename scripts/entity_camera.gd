@@ -9,7 +9,7 @@ const OFFSET = Vector3(0.0, 0.35, 0.0)
 @export var camera: Camera3D
 
 func _ready() -> void:
-	if owner is EntityPlayer and owner.name == "Player" + NetworkManager.get_id():
+	if owner is EntityPlayer and owner.name == "Player" + NetworkClient.get_id():
 		player = owner
 		camera.current = true
 
