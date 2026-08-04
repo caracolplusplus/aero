@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b30b6axsewpj5"]
 
-[ext_resource type="Script" uid="uid://bqwx3we26lejl" path="res://scripts/game_manager.gd" id="1_hwd4i"]
+[ext_resource type="Script" uid="uid://bqwx3we26lejl" path="res://scripts/game/game_manager.gd" id="1_hwd4i"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hwd4i"]
 properties/0/path = NodePath(".:_state")

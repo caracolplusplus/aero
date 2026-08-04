@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cpsxnefg4uejk"
-path="res://.godot/imported/display_player.glb-c1c2b6ab41d97768a0aeeaf72fe739fb.scn"
+path="res://.godot/imported/display_player.glb-997f2cc6928d4080baf7c3608a54af0b.scn"
 
 [deps]
 
-source_file="res://scenes/display_player.glb"
-dest_files=["res://.godot/imported/display_player.glb-c1c2b6ab41d97768a0aeeaf72fe739fb.scn"]
+source_file="res://scenes/player/display_player.glb"
+dest_files=["res://.godot/imported/display_player.glb-997f2cc6928d4080baf7c3608a54af0b.scn"]
 
 [params]
 
@@ -17,6 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 mesh_library/use_node_names_as_mesh_names=false
+mesh_library/create_categories_from_hierarchy=false
 array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
