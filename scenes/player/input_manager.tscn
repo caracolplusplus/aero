@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bd11l8j0htmt2"]
 
-[ext_resource type="Script" uid="uid://cfnccymadewci" path="res://scripts/input_manager.gd" id="1_pxhn3"]
+[ext_resource type="Script" uid="uid://cfnccymadewci" path="res://scripts/player/input_manager.gd" id="1_pxhn3"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qavl1"]
 properties/0/path = NodePath(".:actions")

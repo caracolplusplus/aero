@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://clfs0sckfg7mq"]
 
-[ext_resource type="Script" uid="uid://cnbnbiyarm0uh" path="res://scripts/entity_player.gd" id="1_l3kgs"]
-[ext_resource type="PackedScene" uid="uid://dsf3lb6rrpryk" path="res://scenes/display_player.tscn" id="2_dka8e"]
-[ext_resource type="PackedScene" uid="uid://b0nc6j1n14jmb" path="res://scenes/entity_camera.tscn" id="2_kcvqk"]
+[ext_resource type="Script" uid="uid://cnbnbiyarm0uh" path="res://scripts/player/entity_player.gd" id="1_l3kgs"]
+[ext_resource type="PackedScene" uid="uid://dsf3lb6rrpryk" path="res://scenes/player/display_player.tscn" id="2_dka8e"]
+[ext_resource type="PackedScene" uid="uid://b0nc6j1n14jmb" path="res://scenes/player/entity_camera.tscn" id="2_kcvqk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hxq0j"]
 margin = 0.1
