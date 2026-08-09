@@ -8,10 +8,10 @@ var port: String
 @onready var world = get_tree().get_nodes_in_group("Manager")[1].world
 
 func _ready() -> void:
-	NetworkClient.on_game_connect(_go_to_game)
+	Network.peer_created.connect(_go_to_game)
 
 func _on_host_pressed() -> void:
-	NetworkClient.create_request()
+	Network.host_lobby()
 
 func _on_port_text_changed(new_text: String) -> void:
 	if new_text.is_empty():
@@ -25,7 +25,7 @@ func _on_port_text_changed(new_text: String) -> void:
 		port_line_edit.text = port
 
 func _on_join_pressed() -> void:
-	NetworkClient.join_game(port.to_int())
+	Network.join_lobby(port.to_int())
 
 func _on_back_pressed() -> void:
 	scene_manager.change_scene("MainMenu")

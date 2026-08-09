@@ -12,15 +12,15 @@ var stage: Node
 @onready var args = OS.get_cmdline_args()
 
 func _ready() -> void:
-	NetworkGame.on_master_connect(spawn_stage.bind("Sandbox"))
-	NetworkGame.on_game_peer(spawn_player, Callable())
+	Network.peer_created.connect(spawn_self)
+	multiplayer.peer_connected.connect(spawn_player)
 
 func _get_packed_scene(scene_index: int) -> PackedScene:
 	var scene_path = get_spawnable_scene(scene_index)
 	return load(scene_path)
 
 func spawn_stage(stage_index: String) -> void:
-	if not NetworkGame.initialized or not stage_index in stage_scenes:
+	if not multiplayer.is_server():
 		return
 	
 	if is_instance_valid(stage):
@@ -30,8 +30,12 @@ func spawn_stage(stage_index: String) -> void:
 	
 	get_node(spawn_path).add_child(stage)
 
+func spawn_self() -> void:
+	spawn_stage("Sandbox")
+	spawn_player(multiplayer.get_unique_id())
+
 func spawn_player(player_id: int) -> void:
-	if not NetworkGame.initialized:
+	if not multiplayer.is_server():
 		return
 	
 	var input = _get_packed_scene(input_scene).instantiate() as InputManager

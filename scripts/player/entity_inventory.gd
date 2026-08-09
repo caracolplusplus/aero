@@ -21,10 +21,10 @@ var money: int = 0
 @onready var world: WorldManager = get_tree().get_nodes_in_group("Manager")[1]
 
 func _ready() -> void:
-	if owner is EntityPlayer and owner.name == "Player" + NetworkManager.get_id():
+	if owner is EntityPlayer and owner.name == "Player" + str(multiplayer.get_unique_id()):
 		player = owner
 	
-	if NetworkManager.is_game_server():
+	if multiplayer.is_server():
 		GameManager.on_game_transition(_on_game_state_changed)
 	
 		for i in range(max_slots):
@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 	balance_label.text = "Current Balance: $" + str(money)
 
 func _physics_process(_delta: float) -> void:
-	if NetworkManager.is_game_server():
+	if multiplayer.is_server():
 		for i in range(1, 5):
 			if player.input.key_is_pressed("Item" + str(i)):
 				select_item(i - 1)
@@ -70,7 +70,7 @@ func select_item(index: int) -> void:
 	item_selected.emit(index)
 
 func add_item(item: Node) -> void:
-	if not NetworkManager.is_game_server():
+	if not multiplayer.is_server():
 		return
 	
 	for i in range(items.size()):
@@ -116,7 +116,7 @@ func _on_game_state_changed(state: String) -> void:
 			clear_items()
 
 func _reset_money_for_round() -> void:
-	if not NetworkManager.is_game_server():
+	if not multiplayer.is_server():
 		return
 	
 	# TODO Change up later
@@ -139,7 +139,7 @@ func _give_base_item() -> void:
 	select_item(0)
 
 func buy_item(item_index: String, price: int, slot: int = -1) -> void:
-	if not NetworkManager.is_game_server():
+	if not multiplayer.is_server():
 		return
 	
 	if GameManager._state != "Loadout":
