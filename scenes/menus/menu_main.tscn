@@ -1,69 +1,970 @@
 [gd_scene format=3 uid="uid://dlnkxov17wc5t"]
 
-[ext_resource type="Script" uid="uid://dt3ch34x6j4pq" path="res://scripts/menus/menu_main.gd" id="1_5ucki"]
-[ext_resource type="Texture2D" uid="uid://mgal7idfuhr1" path="res://icon.svg" id="1_dk4ej"]
+[ext_resource type="Script" uid="uid://bi1b12tuwa0x8" path="res://scenes/menus/main_menu.gd" id="1_2qqes"]
+[ext_resource type="Texture2D" uid="uid://cl7eyaxqejkq7" path="res://textures/Pegasus_Logo.png" id="1_bkf8a"]
+[ext_resource type="PackedScene" uid="uid://28g3hbmaoc6b" path="res://scenes/stages/title_backdrop.tscn" id="1_xk348"]
+[ext_resource type="FontFile" uid="uid://sb6f1qdp0xw3" path="res://textures/pegasus_font.otf" id="2_xk348"]
+[ext_resource type="Script" uid="uid://dnr60ndvp8r2l" path="res://scenes/menus/press_any_key.gd" id="4_5u25p"]
+
+[sub_resource type="Animation" id="Animation_bkf8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("First Page/Press Any Key:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("First Page/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("First Page/VBoxContainer/Line Separation:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("First Page/VBoxContainer/Line Separation2:offset_transform_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("First Page/VBoxContainer/Line Separation3:offset_transform_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("First Page/VBoxContainer/Line Separation4:offset_transform_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("First Page/VBoxContainer/Line Separation5:offset_transform_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("First Page/Title/Line Separation:anchor_left")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.25039124]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("First Page/Title/Line Separation:anchor_top")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("First Page/Title/Line Separation:anchor_right")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2519562]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("First Page/Title/Line Separation:anchor_bottom")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.522]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("First Page/Title/Line Separation2:anchor_left")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.001565]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("First Page/Title/Line Separation2:anchor_top")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.50136983]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("First Page/Title/Line Separation2:anchor_right")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.001565]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("First Page/Title/Line Separation2:anchor_bottom")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5233698]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("First Page/Title/Line Separation3:anchor_left")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2519562]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("First Page/Title/Line Separation3:anchor_top")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.91780823]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("First Page/Title/Line Separation3:anchor_right")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2519562]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("First Page/Title/Line Separation3:anchor_bottom")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9398082]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("First Page/Title/Line Separation4:anchor_left")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.28169018]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("First Page/Title/Line Separation4:anchor_top")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.91780823]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("First Page/Title/Line Separation4:anchor_right")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.28169018]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("First Page/Title/Line Separation4:anchor_bottom")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9398082]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("First Page/Title/Line Separation5:anchor_left")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.7758338e-08]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("First Page/Title/Line Separation5:anchor_top")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.91780823]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("First Page/Title/Line Separation5:anchor_right")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.7758338e-08]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("First Page/Title/Line Separation5:anchor_bottom")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9398082]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("First Page/Title/Line Separation:modulate")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5u25p"]
+resource_name = "game_start_transition"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("First Page/VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("First Page/VBoxContainer/Line Separation:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.8, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("First Page/VBoxContainer/Line Separation2:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.8, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("First Page/VBoxContainer/Line Separation3:offset_transform_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.8, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("First Page/VBoxContainer/Line Separation4:offset_transform_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.8, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("First Page/VBoxContainer/Line Separation5:offset_transform_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.8, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("First Page/Title/Line Separation:anchor_left")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.22, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.25039124, -0.25039124, -0.25273865, -0.10015649]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("First Page/Title/Line Separation:anchor_top")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.22, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.5, 0.5, 0.5, 0.5]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("First Page/Title/Line Separation:anchor_right")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.22, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.25039124, 0.97026604, 0.9702659, 0.97026604]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("First Page/Title/Line Separation:anchor_bottom")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.22, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.522, 0.522, 0.522, 0.522]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("First Page/Title/Line Separation2:anchor_left")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.001565, 1.001565]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("First Page/Title/Line Separation2:anchor_top")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.50136983, 0.50136983]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("First Page/Title/Line Separation2:anchor_right")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.001565, 1.1017214]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("First Page/Title/Line Separation2:anchor_bottom")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5233698, 0.5233698]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("First Page/Title/Line Separation3:anchor_left")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.85, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.2519562, 0.40062597, 0.40062597, 0.40062597]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("First Page/Title/Line Separation3:anchor_top")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.85, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.91780823, 0.91780823, 0.91780823, 0.91780823]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("First Page/Title/Line Separation3:anchor_right")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.85, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.2519562, 1.2519562, 1.2519562, 1.1017214]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("First Page/Title/Line Separation3:anchor_bottom")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.85, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.9398082, 0.9398082, 0.9398082, 0.9398082]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("First Page/Title/Line Separation4:anchor_left")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(1.003, 1.3374),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.28169018, 0.025039123]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("First Page/Title/Line Separation4:anchor_top")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(1.003, 1.3374),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.91780823, 0.91780823]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("First Page/Title/Line Separation4:anchor_right")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(1.003, 1.3374),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.28169018, 0.28169015]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("First Page/Title/Line Separation4:anchor_bottom")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(1.003, 1.3374),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.9398082, 0.9398082]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("First Page/Title/Line Separation5:anchor_left")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(1.37, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.7758338e-08, -0.10015649]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("First Page/Title/Line Separation5:anchor_top")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(1.37, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.91780823, 0.91780823]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("First Page/Title/Line Separation5:anchor_right")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(1.37, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.7758338e-08, 4.7758338e-08]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("First Page/Title/Line Separation5:anchor_bottom")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(1.37, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.9398082, 0.9398082]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("First Page/Title/Line Separation:modulate")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xk348"]
+resource_name = "press_any_key_button"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("First Page/Press Any Key:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1.0333333, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5u25p"]
+_data = {
+&"RESET": SubResource("Animation_bkf8a"),
+&"game_start_transition": SubResource("Animation_5u25p"),
+&"press_any_key_button": SubResource("Animation_xk348")
+}
+
+[sub_resource type="FontVariation" id="FontVariation_0nq6b"]
+base_font = ExtResource("2_xk348")
+spacing_glyph = 5
+spacing_space = 10
+
+[sub_resource type="FontVariation" id="FontVariation_503uy"]
+base_font = ExtResource("2_xk348")
+spacing_glyph = 10
 
 [node name="Menu" type="Node" unique_id=1517633204]
+metadata/_edit_vertical_guides_ = [1920.0]
+metadata/_edit_horizontal_guides_ = [1080.0]
 
 [node name="Layer" type="CanvasLayer" parent="." unique_id=1221287225]
 
-[node name="Menu" type="CenterContainer" parent="Layer" unique_id=1775114911 groups=["Menu"]]
+[node name="Main Menu" type="Control" parent="Layer" unique_id=913276248 groups=["Menu"]]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5ucki")
+script = ExtResource("1_2qqes")
+metadata/_edit_use_anchors_ = true
 
-[node name="Column" type="VBoxContainer" parent="Layer/Menu" unique_id=2121053164]
-custom_minimum_size = Vector2(600, 0)
-layout_mode = 2
+[node name="Backdrop" parent="Layer/Main Menu" unique_id=858950068 instance=ExtResource("1_xk348")]
 
-[node name="Border" type="MarginContainer" parent="Layer/Menu/Column" unique_id=2144111102]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+[node name="Transition" type="AnimationPlayer" parent="Layer/Main Menu" unique_id=170885670]
+libraries/ = SubResource("AnimationLibrary_5u25p")
+autoplay = &"press_any_key_button"
 
-[node name="Texture" type="TextureRect" parent="Layer/Menu/Column/Border" unique_id=1248967918]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-texture = ExtResource("1_dk4ej")
-expand_mode = 2
-stretch_mode = 5
+[node name="First Page" type="Control" parent="Layer/Main Menu" unique_id=1251431252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="Singleplayer" type="Button" parent="Layer/Menu/Column" unique_id=1647398188]
-layout_mode = 2
-text = "Play Singleplayer"
+[node name="Title" type="TextureRect" parent="Layer/Main Menu/First Page" unique_id=2099660958]
+self_modulate = Color(0.735357, 0.735357, 0.735357, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16700001
+anchor_right = 0.83300006
+anchor_bottom = 0.33800003
+offset_left = 0.35998535
+offset_right = -0.36010742
+offset_bottom = -0.040039063
+grow_horizontal = 2
+texture = ExtResource("1_bkf8a")
 
-[node name="Multiplayer" type="Button" parent="Layer/Menu/Column" unique_id=1410241268]
-layout_mode = 2
-text = "Play Multiplayer"
+[node name="Line Separation" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=572366400]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.25039124
+anchor_top = 0.5
+anchor_right = 1.2519562
+anchor_bottom = 0.522
+offset_bottom = 0.47000122
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="Margin" type="MarginContainer" parent="Layer/Menu/Column" unique_id=474701567]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+[node name="Line Separation2" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=2043108147]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.001565
+anchor_top = 0.50136983
+anchor_right = 1.001565
+anchor_bottom = 0.5233698
+offset_bottom = 0.47000122
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="Row" type="HBoxContainer" parent="Layer/Menu/Column" unique_id=630709555]
-layout_mode = 2
+[node name="Line Separation3" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=1947002077]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.2519562
+anchor_top = 0.91780823
+anchor_right = 1.2519562
+anchor_bottom = 0.9398082
+offset_bottom = 0.47000122
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="Button" parent="Layer/Menu/Column/Row" unique_id=1958277270]
+[node name="Line Separation4" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=814738395]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28169018
+anchor_top = 0.91780823
+anchor_right = 0.28169018
+anchor_bottom = 0.9398082
+offset_bottom = 0.47000122
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Line Separation5" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=983532326]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.91780823
+anchor_bottom = 0.9398082
+offset_bottom = 0.47000122
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Press Any Key" type="Button" parent="Layer/Main Menu/First Page" unique_id=1757829616]
+modulate = Color(0.49019608, 0.39607844, 0.49803922, 1)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.36100003
+anchor_right = 1.0
+anchor_bottom = 0.39800003
+offset_top = 0.1199646
+offset_bottom = 0.15997314
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_0nq6b")
+theme_override_font_sizes/font_size = 26
+text = "Press any key to start"
+flat = true
+script = ExtResource("4_5u25p")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layer/Main Menu/First Page" unique_id=1239331978]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.404
+anchor_top = 0.4205926
+anchor_right = 0.6032917
+anchor_bottom = 0.92385185
+offset_left = -0.6800537
+offset_top = -0.24002075
+offset_right = 0.67993164
+offset_bottom = 0.23999023
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Single Player" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1647398188]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_503uy")
+theme_override_font_sizes/font_size = 27
+text = "Single Player"
+flat = true
+
+[node name="Line Separation" type="ColorRect" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1960558437]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+
+[node name="Multiplayer" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1410241268]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_503uy")
+theme_override_font_sizes/font_size = 27
+text = "Multiplayer
+"
+flat = true
+
+[node name="Line Separation2" type="ColorRect" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=422972571]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+
+[node name="Settings" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1958277270]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_503uy")
+theme_override_font_sizes/font_size = 27
 text = "Settings
 "
+flat = true
 
-[node name="Quit" type="Button" parent="Layer/Menu/Column/Row" unique_id=1254168449]
+[node name="Line Separation3" type="ColorRect" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1922313439]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+
+[node name="Credits" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=2005001357]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_503uy")
+theme_override_font_sizes/font_size = 27
+text = "Credits"
+flat = true
+
+[node name="Line Separation4" type="ColorRect" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1984705209]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+
+[node name="Quit" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1254168449]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_503uy")
+theme_override_font_sizes/font_size = 27
 text = "Quit
 "
+flat = true
 
-[connection signal="pressed" from="Layer/Menu/Column/Singleplayer" to="Layer/Menu" method="_on_singleplayer_pressed"]
-[connection signal="pressed" from="Layer/Menu/Column/Multiplayer" to="Layer/Menu" method="_on_multiplayer_pressed"]
-[connection signal="pressed" from="Layer/Menu/Column/Row/Settings" to="Layer/Menu" method="_on_settings_pressed"]
-[connection signal="pressed" from="Layer/Menu/Column/Row/Quit" to="Layer/Menu" method="_on_quit_pressed"]
+[node name="Line Separation5" type="ColorRect" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=207745632]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+
+[connection signal="pressed" from="Layer/Main Menu/First Page/Press Any Key" to="Layer/Main Menu/First Page/Press Any Key" method="_on_pressed"]
+[connection signal="tree_exited" from="Layer/Main Menu/First Page/Press Any Key" to="Layer/Main Menu" method="_on_press_any_key_tree_exited"]
+[connection signal="pressed" from="Layer/Main Menu/First Page/VBoxContainer/Single Player" to="Layer/Main Menu" method="_on_singleplayer_pressed"]
+[connection signal="pressed" from="Layer/Main Menu/First Page/VBoxContainer/Multiplayer" to="Layer/Main Menu" method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="Layer/Main Menu/First Page/VBoxContainer/Settings" to="Layer/Main Menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="Layer/Main Menu/First Page/VBoxContainer/Quit" to="Layer/Main Menu" method="_on_quit_pressed"]

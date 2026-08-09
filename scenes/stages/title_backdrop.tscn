@@ -2,6 +2,66 @@
 
 [ext_resource type="Texture2D" uid="uid://1hehqfh85wnl" path="res://textures/sky_117.hdr" id="1_k5y0m"]
 
+[sub_resource type="Animation" id="Animation_k5y0m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 9.271378, 29.084106)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 9.0574255, -16.17)]
+}
+
+[sub_resource type="Animation" id="Animation_bq6x8"]
+resource_name = "menu_game_start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 9.271378, 29.084106), Vector3(0, 30, 29.084)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 9.0574255, -16.17), Vector3(0, 30, -16.17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uswpy"]
+_data = {
+&"RESET": SubResource("Animation_k5y0m"),
+&"menu_game_start": SubResource("Animation_bq6x8")
+}
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_k5y0m"]
 panorama = ExtResource("1_k5y0m")
 filter = false
@@ -322,7 +382,7 @@ shader_parameter/surface_normals_move_direction_a = Vector2(-1, 0.2)
 shader_parameter/surface_normals_move_direction_b = Vector2(0.2, 1)
 shader_parameter/surface_texture_roughness = 0.0
 shader_parameter/surface_texture_scale = 0.1
-shader_parameter/surface_texture_time_scale = 0.10000000475000001
+shader_parameter/surface_texture_time_scale = 0.10000000475
 shader_parameter/ssr_resolution = 3.51000005193068
 shader_parameter/ssr_max_travel = 200.0
 shader_parameter/ssr_max_diff = 4.0
@@ -550,6 +610,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dqnrx")
 
 [node name="Backdrop" type="Node3D" unique_id=858950068]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=174931558]
+libraries/ = SubResource("AnimationLibrary_uswpy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2084630603]
 environment = SubResource("Environment_uswpy")

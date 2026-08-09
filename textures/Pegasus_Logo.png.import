@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw5efgb5jdi8o"
-path="res://.godot/imported/display_player_a.png-ea86553fa0640530b444d7c671ddf3fb.ctex"
+uid="uid://cl7eyaxqejkq7"
+path="res://.godot/imported/Pegasus_Logo.png-7e4f57a8d5d1a239cef97084e9b613ce.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "3242ba72a82f96646692267b61b13b4d"
 }
 
 [deps]
 
-source_file="res://textures/display_player_a.png"
-dest_files=["res://.godot/imported/display_player_a.png-ea86553fa0640530b444d7c671ddf3fb.ctex"]
+source_file="res://textures/Pegasus_Logo.png"
+dest_files=["res://.godot/imported/Pegasus_Logo.png-7e4f57a8d5d1a239cef97084e9b613ce.ctex"]
 
 [params]
 
@@ -40,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
