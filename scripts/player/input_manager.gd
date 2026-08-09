@@ -18,10 +18,10 @@ static var advanced_motion: Vector3
 @export var motion: Vector3 = Vector3.ZERO
 
 func _enter_tree() -> void:
-	NetworkClient.set_authority(self)
+	set_multiplayer_authority(name.to_int())
 
 func _ready() -> void:
-	if not NetworkClient.is_authority(self):
+	if not is_multiplayer_authority():
 		return
 	
 	_construct_actions()
@@ -30,11 +30,11 @@ func _ready() -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_WINDOW_FOCUS_OUT:
-		if NetworkClient.is_authority(self):
+		if is_multiplayer_authority():
 			_release_all_inputs()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not NetworkClient.is_authority(self):
+	if not is_multiplayer_authority():
 		return
 	
 	match event.get_class():
@@ -52,13 +52,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 func _process(_delta: float) -> void:
-	if not NetworkClient.is_authority(self):
+	if not is_multiplayer_authority():
 		return
 	
 	_update_cursor_mode()
 
 func _physics_process(_delta: float) -> void:
-	if not NetworkClient.is_authority(self):
+	if not is_multiplayer_authority():
 		return
 	
 	_advance_actions()

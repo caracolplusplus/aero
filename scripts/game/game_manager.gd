@@ -55,7 +55,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_update_debug_label()
 	
-	if not NetworkGame.initialized:
+	if not multiplayer.is_server():
 		return
 	
 	fsm.process_state(delta)
@@ -86,7 +86,7 @@ func _countdown_timer(delta: float, callback: Callable = Callable()) -> void:
 		callback.call()
 
 func _assign_team(player_id: int) -> void:
-	if not NetworkGame.initialized:
+	if not multiplayer.is_server():
 		return
 	
 	if _team_south.size() > _team_north.size():
@@ -99,7 +99,7 @@ func _clear_teams() -> void:
 	_team_north.clear()
 
 func _register() -> void:
-	if not NetworkGame.initialized:
+	if not multiplayer.is_server():
 		return
 	
 	_transition_to(null)
@@ -286,7 +286,7 @@ func _on_match_end_process(delta: float) -> void:
 	_countdown_timer(delta, _transition_to.bind(null))
 
 func _update_debug_label() -> void:
-	if not NetworkClient.is_game_online():
+	if multiplayer.multiplayer_peer is OfflineMultiplayerPeer:
 		label.text = "[Offline]"
 		return
 	

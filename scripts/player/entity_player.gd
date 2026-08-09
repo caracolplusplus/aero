@@ -65,7 +65,7 @@ var _game_state = FSM.State.new("Game", Callable(), _on_game_state)
 var _dead_state = FSM.State.new("Dead", _on_dead_enter, _on_default_state, _on_dead_exit)
 
 func _ready() -> void:
-	if not NetworkGame.initialized:
+	if not multiplayer.is_server():
 		return
 	
 	fsm = FSM.new()
@@ -74,7 +74,7 @@ func _ready() -> void:
 	GameManager.on_game_transition(_on_game_state_changed)
 
 func _physics_process(delta: float) -> void:
-	if NetworkGame.initialized:
+	if multiplayer.is_server():
 		fsm.process_state(delta)
 		
 		replicated_position = position
@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 
 @rpc("any_peer", "call_local", "reliable")
 func damage(amount: float) -> void:
-	if not NetworkGame.initialized:
+	if not multiplayer.is_server():
 		return
 	
 	if fsm.get_state() != "Game":
@@ -106,7 +106,7 @@ func _on_game_state_changed(state: String) -> void:
 		"None", "Setup", "MatchEnd":
 			fsm.transition_to(_default_state)
 		"Loadout":
-			var player_id = NetworkGame.get_id() # TODO THIS IS WRONG!!!
+			var player_id = name.trim_prefix("Player").to_int()
 			
 			if GameManager._team_north.has(player_id):
 				team = Team.NORTH
