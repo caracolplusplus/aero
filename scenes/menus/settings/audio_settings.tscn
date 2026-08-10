@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cwmvtee73knty"]
+
+[ext_resource type="Script" uid="uid://gr0oh75bwsi0" path="res://scripts/menus/settings/audio.gd" id="1_a21j1"]
+
+[node name="AudioSettings" type="MarginContainer" unique_id=358157081]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=4959423]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MasterVolume" type="HBoxContainer" parent="VBoxContainer" unique_id=1727119833]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MasterVolume" unique_id=1501089592]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Master volume"
+vertical_alignment = 1
+
+[node name="SliderAndValue" type="HBoxContainer" parent="VBoxContainer/MasterVolume" unique_id=254512614]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_a21j1")
+bus_name = "Master"
+config_volume_name = "master_volume"
+
+[node name="Slider" type="HSlider" parent="VBoxContainer/MasterVolume/SliderAndValue" unique_id=903548383]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Value" type="Label" parent="VBoxContainer/MasterVolume/SliderAndValue" unique_id=138411229]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicVolume" type="HBoxContainer" parent="VBoxContainer" unique_id=239529365]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MusicVolume" unique_id=176464961]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Music volume"
+vertical_alignment = 1
+
+[node name="SliderAndValue" type="HBoxContainer" parent="VBoxContainer/MusicVolume" unique_id=6710937]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_a21j1")
+bus_name = "Music"
+config_volume_name = "music_volume"
+
+[node name="Slider" type="HSlider" parent="VBoxContainer/MusicVolume/SliderAndValue" unique_id=490485283]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Value" type="Label" parent="VBoxContainer/MusicVolume/SliderAndValue" unique_id=1970316999]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXVolume" type="HBoxContainer" parent="VBoxContainer" unique_id=1802251367]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SFXVolume" unique_id=792946752]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "SFX volume"
+vertical_alignment = 1
+
+[node name="SliderAndValue" type="HBoxContainer" parent="VBoxContainer/SFXVolume" unique_id=522966860]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_a21j1")
+bus_name = "SFX"
+config_volume_name = "sfx_volume"
+
+[node name="Slider" type="HSlider" parent="VBoxContainer/SFXVolume/SliderAndValue" unique_id=2031833120]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Value" type="Label" parent="VBoxContainer/SFXVolume/SliderAndValue" unique_id=1378866795]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="VBoxContainer/MasterVolume/SliderAndValue/Slider" to="VBoxContainer/MasterVolume/SliderAndValue" method="_on_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MusicVolume/SliderAndValue/Slider" to="VBoxContainer/MusicVolume/SliderAndValue" method="_on_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFXVolume/SliderAndValue/Slider" to="VBoxContainer/SFXVolume/SliderAndValue" method="_on_slider_value_changed"]

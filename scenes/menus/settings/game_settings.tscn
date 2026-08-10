@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cm135rb6qtekv"]
+
+[ext_resource type="Script" uid="uid://6djcfwn21se5" path="res://scripts/menus/settings/mouse_sensitivity.gd" id="1_du8x8"]
+[ext_resource type="Script" uid="uid://b787pn8uw7x46" path="res://scripts/menus/settings/fov.gd" id="2_28afu"]
+
+[node name="GameSettings" type="MarginContainer" unique_id=185611026]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=151419059]
+layout_mode = 2
+
+[node name="MouseSensitivity" type="HBoxContainer" parent="VBoxContainer" unique_id=1285321235]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MouseSensitivity" unique_id=791899042]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Mouse sensitivity"
+vertical_alignment = 1
+
+[node name="SliderAndValue" type="HBoxContainer" parent="VBoxContainer/MouseSensitivity" unique_id=233610931]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_du8x8")
+
+[node name="Slider" type="HSlider" parent="VBoxContainer/MouseSensitivity/SliderAndValue" unique_id=971777860]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="Value" type="Label" parent="VBoxContainer/MouseSensitivity/SliderAndValue" unique_id=227615311]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.1
+text = "1.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FOV" type="HBoxContainer" parent="VBoxContainer" unique_id=668815343]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/FOV" unique_id=215975613]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "FOV"
+vertical_alignment = 1
+
+[node name="SliderAndValue" type="HBoxContainer" parent="VBoxContainer/FOV" unique_id=125792871]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_28afu")
+
+[node name="Slider" type="HSlider" parent="VBoxContainer/FOV/SliderAndValue" unique_id=991523106]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+value = 85.0
+
+[node name="Value" type="Label" parent="VBoxContainer/FOV/SliderAndValue" unique_id=1436323212]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.1
+text = "85"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="VBoxContainer/MouseSensitivity/SliderAndValue/Slider" to="VBoxContainer/MouseSensitivity/SliderAndValue" method="_on_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/FOV/SliderAndValue/Slider" to="VBoxContainer/FOV/SliderAndValue" method="_on_slider_value_changed"]

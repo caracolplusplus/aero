@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://crw23tacexur5"]
+
+[ext_resource type="Script" uid="uid://cj5yugk27cl70" path="res://scripts/menus/settings/keybindings.gd" id="1_lmuct"]
+
+[node name="InputSettingsKeybinding" type="HBoxContainer" unique_id=81882570]
+custom_minimum_size = Vector2(0, 48)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lmuct")
+input_name = "forward"
+
+[node name="Label" type="Label" parent="." unique_id=1975956977]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=720583904]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="Button" to="." method="_on_rebind_button_pressed"]
