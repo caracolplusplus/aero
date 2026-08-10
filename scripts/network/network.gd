@@ -26,11 +26,11 @@ func _on_lobby_created(result: int, lobby_id: int) -> void:
 		peer.server_relay = true
 		peer.create_host()
 		
-		peer_created.emit()
+		multiplayer.multiplayer_peer = peer
 		
 		print(lobby_id)
 		
-		multiplayer.multiplayer_peer = peer
+		peer_created.emit()
 
 func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: bool, response: int) -> void:
 	if response == Steam.CHAT_ROOM_ENTER_RESPONSE_SUCCESS:
@@ -41,9 +41,11 @@ func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: bool, response:
 		peer.server_relay = true
 		peer.create_client(Steam.getLobbyOwner(lobby_id))
 		
-		peer_created.emit()
-		
 		multiplayer.multiplayer_peer = peer
+		
+		await multiplayer.connected_to_server
+		
+		peer_created.emit()
 
 func _on_join_requested(lobby_id: int, _steam_id: int) -> void:
 	Steam.joinLobby(lobby_id)
