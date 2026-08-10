@@ -38,6 +38,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="WorldManager" type="MultiplayerSpawner" parent="." unique_id=2063326389 groups=["Manager"]]
+_spawnable_scenes = PackedStringArray("uid://bd11l8j0htmt2", "uid://clfs0sckfg7mq", "uid://cre8sax4egexr")
 spawn_path = NodePath("../World")
 spawn_limit = 1200
 script = ExtResource("6_hun0w")

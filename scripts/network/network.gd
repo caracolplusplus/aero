@@ -20,13 +20,15 @@ func host_lobby() -> void:
 func join_lobby(lobby_id: int) -> void:
 	Steam.joinLobby(lobby_id)
 
-func _on_lobby_created(result: int, _lobby_id: int) -> void:
+func _on_lobby_created(result: int, lobby_id: int) -> void:
 	if result == Steam.RESULT_OK:
 		var peer = SteamMultiplayerPeer.new()
 		peer.server_relay = true
 		peer.create_host()
 		
 		peer_created.emit()
+		
+		print(lobby_id)
 		
 		multiplayer.multiplayer_peer = peer
 
