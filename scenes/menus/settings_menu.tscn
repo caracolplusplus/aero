@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b14y32q08pq0u"]
+
+[ext_resource type="Script" uid="uid://kmpyamusv8qy" path="res://scripts/menus/settings_menu.gd" id="1_da10i"]
+[ext_resource type="PackedScene" uid="uid://cm135rb6qtekv" path="res://scenes/menus/settings/game_settings.tscn" id="1_ojvp1"]
+[ext_resource type="PackedScene" uid="uid://cwmvtee73knty" path="res://scenes/menus/settings/audio_settings.tscn" id="2_da10i"]
+[ext_resource type="PackedScene" uid="uid://brei2gt60vsoi" path="res://scenes/menus/settings/input_settings.tscn" id="3_jjfif"]
+[ext_resource type="PackedScene" uid="uid://nl7cm1b2qmdr" path="res://scenes/menus/settings/video_settings.tscn" id="4_kffdn"]
+
+[node name="SettingsMenu" type="Control" unique_id=765649999]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_da10i")
+
+[node name="Panel" type="Panel" parent="." unique_id=1579298107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel" unique_id=997488934]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 181.66667
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 56
+text = "Settings
+"
+horizontal_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="Panel" unique_id=2004763143]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+current_tab = 0
+
+[node name="Game" parent="Panel/TabContainer" unique_id=151419059 instance=ExtResource("1_ojvp1")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Video" parent="Panel/TabContainer" unique_id=603854062 instance=ExtResource("4_kffdn")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Audio" parent="Panel/TabContainer" unique_id=4959423 instance=ExtResource("2_da10i")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Input" parent="Panel/TabContainer" unique_id=1614778615 instance=ExtResource("3_jjfif")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Exit" type="Button" parent="Panel" unique_id=1721936075]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 990.0
+offset_right = 1040.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]

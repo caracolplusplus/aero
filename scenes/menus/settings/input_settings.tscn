@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://brei2gt60vsoi"]
+
+[ext_resource type="PackedScene" uid="uid://crw23tacexur5" path="res://scenes/menus/settings/input_settings_keybinding.tscn" id="1_8qi5d"]
+
+[node name="ScrollContainer" type="ScrollContainer" unique_id=1772645387]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InputSettings" type="MarginContainer" parent="." unique_id=647280731]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputSettings" unique_id=1614778615]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Movement" type="Label" parent="InputSettings/VBoxContainer" unique_id=985571543]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Movement"
+
+[node name="HSeparator" type="HSeparator" parent="InputSettings/VBoxContainer" unique_id=780904908]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputSettings/VBoxContainer" unique_id=579986169]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Forward" parent="InputSettings/VBoxContainer/VBoxContainer" unique_id=81882570 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer/Forward" index="0" unique_id=1975956977]
+text = "Forward"
+
+[node name="Left" parent="InputSettings/VBoxContainer/VBoxContainer" unique_id=1070774950 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "left"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer/Left" index="0" unique_id=1975956977]
+text = "Left"
+
+[node name="Right" parent="InputSettings/VBoxContainer/VBoxContainer" unique_id=1668994520 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "right"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer/Right" index="0" unique_id=1975956977]
+text = "Right"
+
+[node name="Back" parent="InputSettings/VBoxContainer/VBoxContainer" unique_id=1885641258 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "back"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer/Back" index="0" unique_id=1975956977]
+text = "Back"
+
+[node name="Up" parent="InputSettings/VBoxContainer/VBoxContainer" unique_id=89929396 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "up"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer/Up" index="0" unique_id=1975956977]
+text = "Up"
+
+[node name="Down" parent="InputSettings/VBoxContainer/VBoxContainer" unique_id=2016474039 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "down"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer/Down" index="0" unique_id=1975956977]
+text = "Down"
+
+[node name="Dash" parent="InputSettings/VBoxContainer/VBoxContainer" unique_id=966444780 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "dash"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer/Dash" index="0" unique_id=1975956977]
+text = "Dash"
+
+[node name="Spacer" type="Control" parent="InputSettings/VBoxContainer" unique_id=1102553516]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Abilities" type="Label" parent="InputSettings/VBoxContainer" unique_id=827781879]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Abilities"
+vertical_alignment = 2
+
+[node name="HSeparator3" type="HSeparator" parent="InputSettings/VBoxContainer" unique_id=873266681]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="InputSettings/VBoxContainer" unique_id=314509069]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Shoot" parent="InputSettings/VBoxContainer/VBoxContainer2" unique_id=2139504114 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "shoot"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer2/Shoot" index="0" unique_id=1975956977]
+text = "Shoot"
+
+[node name="ADS" parent="InputSettings/VBoxContainer/VBoxContainer2" unique_id=93073231 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "ads"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer2/ADS" index="0" unique_id=1975956977]
+text = "Aim down sight"
+
+[node name="Slot1" parent="InputSettings/VBoxContainer/VBoxContainer2" unique_id=654805448 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "slot1"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer2/Slot1" index="0" unique_id=1975956977]
+text = "Slot 1"
+
+[node name="Slot2" parent="InputSettings/VBoxContainer/VBoxContainer2" unique_id=399470917 instance=ExtResource("1_8qi5d")]
+layout_mode = 2
+input_name = "slot2"
+
+[node name="Label" parent="InputSettings/VBoxContainer/VBoxContainer2/Slot2" index="0" unique_id=1975956977]
+text = "Slot 2"
+
+[editable path="InputSettings/VBoxContainer/VBoxContainer/Forward"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer/Left"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer/Right"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer/Back"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer/Up"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer/Down"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer/Dash"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer2/Shoot"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer2/ADS"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer2/Slot1"]
+[editable path="InputSettings/VBoxContainer/VBoxContainer2/Slot2"]

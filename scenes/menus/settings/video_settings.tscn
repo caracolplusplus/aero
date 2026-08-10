@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://nl7cm1b2qmdr"]
+
+[ext_resource type="Script" uid="uid://cdncpgui0jxgn" path="res://scripts/menus/settings/fullscreen.gd" id="1_f8lbh"]
+[ext_resource type="Script" uid="uid://bj54tnxxaadm6" path="res://scripts/menus/settings/resolution.gd" id="2_6voe6"]
+
+[node name="VideoSettings" type="MarginContainer" unique_id=1802240924]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=603854062]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Fullscreen" type="HBoxContainer" parent="VBoxContainer" unique_id=335831285]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Fullscreen" unique_id=622762181]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Fullscreen"
+vertical_alignment = 1
+
+[node name="Checkbox" type="CheckBox" parent="VBoxContainer/Fullscreen" unique_id=1619942325]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 0
+button_pressed = true
+script = ExtResource("1_f8lbh")
+
+[node name="Resolution" type="HBoxContainer" parent="VBoxContainer" unique_id=1430213662]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Resolution" unique_id=1474312102]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Resolution" unique_id=21711052]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_6voe6")
+
+[connection signal="item_selected" from="VBoxContainer/Resolution/OptionButton" to="VBoxContainer/Resolution/OptionButton" method="_on_resolution_selected"]
