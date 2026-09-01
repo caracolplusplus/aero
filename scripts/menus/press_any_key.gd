@@ -1,6 +1,5 @@
 extends Button
 
-
 func _on_pressed() -> void:
 	start_game()
 

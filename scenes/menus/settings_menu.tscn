@@ -3,21 +3,70 @@
 [ext_resource type="Script" uid="uid://kmpyamusv8qy" path="res://scripts/menus/settings_menu.gd" id="1_da10i"]
 [ext_resource type="PackedScene" uid="uid://cm135rb6qtekv" path="res://scenes/menus/settings/game_settings.tscn" id="1_ojvp1"]
 [ext_resource type="PackedScene" uid="uid://cwmvtee73knty" path="res://scenes/menus/settings/audio_settings.tscn" id="2_da10i"]
+[ext_resource type="Texture2D" uid="uid://cqmwyvnbc8gk3" path="res://textures/settings_menu/setting_menu_background.png" id="2_kffdn"]
 [ext_resource type="PackedScene" uid="uid://brei2gt60vsoi" path="res://scenes/menus/settings/input_settings.tscn" id="3_jjfif"]
+[ext_resource type="Texture2D" uid="uid://dngda50kfgvwc" path="res://textures/settings_menu/label.png" id="3_qnuys"]
 [ext_resource type="PackedScene" uid="uid://nl7cm1b2qmdr" path="res://scenes/menus/settings/video_settings.tscn" id="4_kffdn"]
+[ext_resource type="StyleBox" uid="uid://mpx40bw7gcbk" path="res://textures/settings_menu/themes/tab_unselected.tres" id="4_qnuys"]
+[ext_resource type="StyleBox" uid="uid://ce374u6ohveom" path="res://textures/settings_menu/themes/tab_unselected_hovered.tres" id="5_eoonq"]
+[ext_resource type="Theme" uid="uid://cuyhhopk6v41p" path="res://textures/settings_menu/themes/label_theme.tres" id="10_muhwa"]
+[ext_resource type="Texture2D" uid="uid://buhmphkg4dv1q" path="res://textures/settings_menu/back_button.png" id="11_g67jo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoonq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.9098039, 0.81960785, 0.627451, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25882354, 0.16862746, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnuys"]
+content_margin_left = 36.0
+content_margin_top = 4.0
+content_margin_right = 36.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9098039, 0.81960785, 0.627451, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_color = Color(0.25882354, 0.16862746, 0.2, 1)
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrg86"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="SettingsMenu" type="Control" unique_id=765649999]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 100.0
-offset_top = 50.0
-offset_right = -100.0
-offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_da10i")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=559800417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kffdn")
 
 [node name="Panel" type="Panel" parent="." unique_id=1579298107]
 layout_mode = 1
@@ -27,58 +76,79 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="Panel" unique_id=997488934]
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=929240667]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 181.66667
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 300
+
+[node name="TitleImage" type="TextureRect" parent="Panel/MarginContainer" unique_id=1313456297]
+custom_minimum_size = Vector2(0, 69)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("3_qnuys")
+
+[node name="Title" type="Label" parent="Panel/MarginContainer" unique_id=997488934]
+visible = false
+layout_mode = 2
 theme_override_font_sizes/font_size = 56
 text = "Settings
 "
 horizontal_alignment = 1
 
-[node name="TabContainer" type="TabContainer" parent="Panel" unique_id=2004763143]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
+[node name="TabContainer" type="TabContainer" parent="Panel/MarginContainer" unique_id=2004763143]
+layout_mode = 2
+theme_override_colors/font_selected_color = Color(0.25882354, 0.16862746, 0.2, 1)
+theme_override_colors/font_hovered_color = Color(0.9472656, 0.8533556, 0.65328664, 1)
+theme_override_colors/font_unselected_color = Color(0.9098039, 0.81960785, 0.627451, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/panel = SubResource("StyleBoxFlat_eoonq")
+theme_override_styles/tab_unselected = ExtResource("4_qnuys")
+theme_override_styles/tab_hovered = ExtResource("5_eoonq")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_qnuys")
 current_tab = 0
 
-[node name="Game" parent="Panel/TabContainer" unique_id=151419059 instance=ExtResource("1_ojvp1")]
+[node name="Game" parent="Panel/MarginContainer/TabContainer" unique_id=151419059 instance=ExtResource("1_ojvp1")]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Video" parent="Panel/TabContainer" unique_id=603854062 instance=ExtResource("4_kffdn")]
+[node name="Video" parent="Panel/MarginContainer/TabContainer" unique_id=603854062 instance=ExtResource("4_kffdn")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Audio" parent="Panel/TabContainer" unique_id=4959423 instance=ExtResource("2_da10i")]
+[node name="Audio" parent="Panel/MarginContainer/TabContainer" unique_id=4959423 instance=ExtResource("2_da10i")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="Input" parent="Panel/TabContainer" unique_id=1614778615 instance=ExtResource("3_jjfif")]
+[node name="Input" parent="Panel/MarginContainer/TabContainer" unique_id=1614778615 instance=ExtResource("3_jjfif")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
 [node name="Exit" type="Button" parent="Panel" unique_id=1721936075]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 990.0
-offset_right = 1040.0
-offset_bottom = 50.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
-text = "X"
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = -227.0
+offset_right = 509.0
+offset_bottom = -136.0
+grow_vertical = 0
+theme = ExtResource("10_muhwa")
+theme_override_colors/font_color = Color(0.25882354, 0.16862746, 0.2, 1)
+theme_override_icons/icon = ExtResource("11_g67jo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rrg86")
+text = "Back"
+icon_alignment = 1
 
 [connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]

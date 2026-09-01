@@ -1,7 +1,43 @@
 [gd_scene format=3 uid="uid://nl7cm1b2qmdr"]
 
 [ext_resource type="Script" uid="uid://cdncpgui0jxgn" path="res://scripts/menus/settings/fullscreen.gd" id="1_f8lbh"]
+[ext_resource type="Theme" uid="uid://cuyhhopk6v41p" path="res://textures/settings_menu/themes/label_theme.tres" id="1_fbbte"]
+[ext_resource type="Texture2D" uid="uid://2nwa2oje8qvd" path="res://textures/settings_menu/toggle/toggle_on.png" id="1_qenl1"]
 [ext_resource type="Script" uid="uid://bj54tnxxaadm6" path="res://scripts/menus/settings/resolution.gd" id="2_6voe6"]
+[ext_resource type="Texture2D" uid="uid://ctmgkt42c8xnx" path="res://textures/settings_menu/toggle/toggle_off.png" id="2_fbbte"]
+[ext_resource type="Texture2D" uid="uid://duhxgp5j877yv" path="res://textures/settings_menu/triangles/left.png" id="6_gu3lv"]
+[ext_resource type="Texture2D" uid="uid://dnruton1x8o5e" path="res://textures/settings_menu/triangles/right.png" id="7_rlfyn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fbbte"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjhfp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muhwa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ny0cv"]
+bg_color = Color(0.25882354, 0.16862746, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrg86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4pvf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g67jo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbbte"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25882354, 0.16862746, 0.2, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="VideoSettings" type="MarginContainer" unique_id=1802240924]
 anchors_preset = 15
@@ -10,13 +46,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 24
+theme_override_constants/margin_top = 48
 theme_override_constants/margin_right = 48
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_bottom = 48
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=603854062]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 24
 
 [node name="Fullscreen" type="HBoxContainer" parent="VBoxContainer" unique_id=335831285]
 layout_mode = 2
@@ -25,31 +61,76 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("1_fbbte")
+theme_override_colors/font_color = Color(0.25882354, 0.16862746, 0.2, 1)
 text = "Fullscreen"
 vertical_alignment = 1
 
-[node name="Checkbox" type="CheckBox" parent="VBoxContainer/Fullscreen" unique_id=1619942325]
-custom_minimum_size = Vector2(0, 48)
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/Fullscreen" unique_id=311360776]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 0
-button_pressed = true
+theme_override_icons/checked = ExtResource("1_qenl1")
+theme_override_icons/unchecked = ExtResource("2_fbbte")
 script = ExtResource("1_f8lbh")
 
-[node name="Resolution" type="HBoxContainer" parent="VBoxContainer" unique_id=1430213662]
-custom_minimum_size = Vector2(0, 48)
+[node name="Resolution" type="VBoxContainer" parent="VBoxContainer" unique_id=770609551]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/Resolution" unique_id=1474312102]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
-text = "Resolution"
-
-[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Resolution" unique_id=21711052]
-layout_mode = 2
-size_flags_horizontal = 3
+theme_override_constants/separation = 16
 script = ExtResource("2_6voe6")
 
-[connection signal="item_selected" from="VBoxContainer/Resolution/OptionButton" to="VBoxContainer/Resolution/OptionButton" method="_on_resolution_selected"]
+[node name="Carousel" type="HBoxContainer" parent="VBoxContainer/Resolution" unique_id=1430213662]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Resolution/Carousel" unique_id=1474312102]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_fbbte")
+theme_override_colors/font_color = Color(0.25882354, 0.16862746, 0.2, 1)
+text = "Resolution"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Resolution/Carousel" unique_id=1458109153]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 24
+
+[node name="Left" type="Button" parent="VBoxContainer/Resolution/Carousel/HBoxContainer" unique_id=1754787654]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fbbte")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fjhfp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_muhwa")
+icon = ExtResource("6_gu3lv")
+
+[node name="Label" type="Label" parent="VBoxContainer/Resolution/Carousel/HBoxContainer" unique_id=1510408016]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_fbbte")
+theme_override_colors/font_color = Color(0.9098039, 0.81960785, 0.627451, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ny0cv")
+text = "Resolution"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="Button" parent="VBoxContainer/Resolution/Carousel/HBoxContainer" unique_id=1539112337]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rrg86")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n4pvf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g67jo")
+icon = ExtResource("7_rlfyn")
+
+[node name="Apply" type="Button" parent="VBoxContainer/Resolution" unique_id=2141058862]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_fbbte")
+theme_override_colors/font_color = Color(0.9098039, 0.81960785, 0.627451, 1)
+theme_override_colors/font_hover_color = Color(0.9098039, 0.81960785, 0.627451, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fbbte")
+text = "Apply"
+
+[connection signal="toggled" from="VBoxContainer/Fullscreen/CheckButton" to="VBoxContainer/Fullscreen/CheckButton" method="_on_toggled"]
+[connection signal="pressed" from="VBoxContainer/Resolution/Carousel/HBoxContainer/Left" to="VBoxContainer/Resolution" method="_on_left_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resolution/Carousel/HBoxContainer/Right" to="VBoxContainer/Resolution" method="_on_right_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resolution/Apply" to="VBoxContainer/Resolution" method="_on_apply_resolution"]

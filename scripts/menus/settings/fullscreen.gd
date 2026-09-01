@@ -1,4 +1,4 @@
-extends CheckBox
+extends CheckButton
 
 func _ready() -> void:
 	var fullscreen = ConfigFileHandler.load_key_settings("video", "fullscreen")

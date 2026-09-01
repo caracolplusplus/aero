@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://crw23tacexur5"]
 
 [ext_resource type="Script" uid="uid://cj5yugk27cl70" path="res://scripts/menus/settings/keybindings.gd" id="1_lmuct"]
+[ext_resource type="StyleBox" uid="uid://ccncse4xgxrr7" path="res://textures/settings_menu/themes/key_binding_button.tres" id="2_6yhn8"]
+[ext_resource type="Theme" uid="uid://cuyhhopk6v41p" path="res://textures/settings_menu/themes/label_theme.tres" id="2_87ltf"]
 
 [node name="InputSettingsKeybinding" type="HBoxContainer" unique_id=81882570]
 custom_minimum_size = Vector2(0, 48)
@@ -16,11 +18,16 @@ input_name = "forward"
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("2_87ltf")
+theme_override_colors/font_color = Color(0.25882354, 0.16862746, 0.2, 1)
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=720583904]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9098039, 0.81960785, 0.627451, 1)
+theme_override_colors/font_hover_color = Color(0.9472656, 0.8533556, 0.65328664, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6yhn8")
 
 [connection signal="pressed" from="Button" to="." method="_on_rebind_button_pressed"]
