@@ -1,15 +1,9 @@
 [gd_scene format=3 uid="uid://dlnkxov17wc5t"]
 
 [ext_resource type="Script" uid="uid://bi1b12tuwa0x8" path="res://scripts/menus/main_menu.gd" id="1_2qqes"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://cl7eyaxqejkq7" path="res://textures/Pegasus_Logo.png" id="1_bkf8a"]
-[ext_resource type="PackedScene" uid="uid://28g3hbmaoc6b" path="res://scenes/stages/title_backdrop.tscn" id="1_xk348"]
-[ext_resource type="FontFile" uid="uid://sb6f1qdp0xw3" path="res://textures/pegasus_font.otf" id="2_xk348"]
-=======
 [ext_resource type="PackedScene" uid="uid://28g3hbmaoc6b" path="res://scenes/stages/title_backdrop.tscn" id="1_xk348"]
 [ext_resource type="FontFile" uid="uid://sb6f1qdp0xw3" path="res://textures and fonts/Fonts/pegasus_font.otf" id="2_xk348"]
 [ext_resource type="Texture2D" uid="uid://dplamey84o1de" path="res://textures and fonts/Textures/Pegasus_Logo_White.png" id="3_5u25p"]
->>>>>>> Stashed changes
 [ext_resource type="Script" uid="uid://dnr60ndvp8r2l" path="res://scripts/menus/press_any_key.gd" id="4_5u25p"]
 
 [sub_resource type="Animation" id="Animation_bkf8a"]
