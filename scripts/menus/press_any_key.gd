@@ -9,5 +9,6 @@ func _unhandled_input(event):
 
 func start_game():
 	print("Game Start")
-	$"../../Backdrop".get_node("AnimationPlayer").play("menu_game_start")
+	$"../VBoxContainer".show()
+	$"../../Backdrop".get_node("CameraMovement").play("menu_game_start")
 	$".".queue_free()

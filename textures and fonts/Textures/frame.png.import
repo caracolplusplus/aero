@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl7eyaxqejkq7"
-path="res://.godot/imported/Pegasus_Logo.png-7e4f57a8d5d1a239cef97084e9b613ce.ctex"
+uid="uid://jqltkhp76pmx"
+path="res://.godot/imported/frame.png-c3a96d46b77e21c6477eece7a5eb3aa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Pegasus_Logo.png"
-dest_files=["res://.godot/imported/Pegasus_Logo.png-7e4f57a8d5d1a239cef97084e9b613ce.ctex"]
+source_file="res://textures and fonts/Textures/frame.png"
+dest_files=["res://.godot/imported/frame.png-c3a96d46b77e21c6477eece7a5eb3aa7.ctex"]
 
 [params]
 

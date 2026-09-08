@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://sb6f1qdp0xw3"
-path="res://.godot/imported/pegasus_font.otf-4a5794fd477efac1a76e042590c3e68f.fontdata"
+uid="uid://ct8qucyjh6s37"
+path="res://.godot/imported/Montserrat-Light.ttf-e34563d123266a591074b1cbc444e3e8.fontdata"
 
 [deps]
 
-source_file="res://textures/pegasus_font.otf"
-dest_files=["res://.godot/imported/pegasus_font.otf-4a5794fd477efac1a76e042590c3e68f.fontdata"]
+source_file="res://textures and fonts/Fonts/Montserrat/static/Montserrat-Light.ttf"
+dest_files=["res://.godot/imported/Montserrat-Light.ttf-e34563d123266a591074b1cbc444e3e8.fontdata"]
 
 [params]
 

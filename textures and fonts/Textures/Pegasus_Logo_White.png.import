@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1hehqfh85wnl"
-path.bptc="res://.godot/imported/sky_117.hdr-5e5ee52cde65d9a17c9838eaee579e68.bptc.ctex"
+uid="uid://dplamey84o1de"
+path="res://.godot/imported/Pegasus_Logo_White.png-74e4138391e1cb5a95a795f8137033c5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/sky_117.hdr"
-dest_files=["res://.godot/imported/sky_117.hdr-5e5ee52cde65d9a17c9838eaee579e68.bptc.ctex"]
+source_file="res://textures and fonts/Textures/Pegasus_Logo_White.png"
+dest_files=["res://.godot/imported/Pegasus_Logo_White.png-74e4138391e1cb5a95a795f8137033c5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/high_quality_mode=0
 compress/lossy_quality=0.7
@@ -25,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -39,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

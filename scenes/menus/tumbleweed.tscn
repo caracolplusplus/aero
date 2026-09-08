@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dqynrdy1fkfvk"]
+
+[ext_resource type="Texture2D" uid="uid://c1n1fswp0y5bv" path="res://textures and fonts/Textures/tumbleweed_1.png" id="1_6oy60"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n2dsj"]
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7hn0v"]
+radius = 353.06
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n2dsj"]
+
+[node name="Tumbleweed" type="RigidBody2D" unique_id=1618654917]
+physics_material_override = SubResource("PhysicsMaterial_n2dsj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1984166673]
+position = Vector2(0, -96)
+texture = ExtResource("1_6oy60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=1881677873]
+position = Vector2(0, 96)
+shape = SubResource("CircleShape2D_7hn0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665609947]
+position = Vector2(8, 624)
+shape = SubResource("WorldBoundaryShape2D_n2dsj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=748918686]
+zoom = Vector2(0.1, 0.1)

@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://dlnkxov17wc5t"]
 
 [ext_resource type="Script" uid="uid://bi1b12tuwa0x8" path="res://scripts/menus/main_menu.gd" id="1_2qqes"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://cl7eyaxqejkq7" path="res://textures/Pegasus_Logo.png" id="1_bkf8a"]
 [ext_resource type="PackedScene" uid="uid://28g3hbmaoc6b" path="res://scenes/stages/title_backdrop.tscn" id="1_xk348"]
 [ext_resource type="FontFile" uid="uid://sb6f1qdp0xw3" path="res://textures/pegasus_font.otf" id="2_xk348"]
+=======
+[ext_resource type="PackedScene" uid="uid://28g3hbmaoc6b" path="res://scenes/stages/title_backdrop.tscn" id="1_xk348"]
+[ext_resource type="FontFile" uid="uid://sb6f1qdp0xw3" path="res://textures and fonts/Fonts/pegasus_font.otf" id="2_xk348"]
+[ext_resource type="Texture2D" uid="uid://dplamey84o1de" path="res://textures and fonts/Textures/Pegasus_Logo_White.png" id="3_5u25p"]
+>>>>>>> Stashed changes
 [ext_resource type="Script" uid="uid://dnr60ndvp8r2l" path="res://scripts/menus/press_any_key.gd" id="4_5u25p"]
 
 [sub_resource type="Animation" id="Animation_bkf8a"]
@@ -344,10 +350,70 @@ tracks/27/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("First Page/VBoxContainer/Single Player:mouse_filter")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("First Page/VBoxContainer/Multiplayer:mouse_filter")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("First Page/VBoxContainer/Settings:mouse_filter")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("First Page/VBoxContainer/Credits:mouse_filter")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("First Page/VBoxContainer/Quit:mouse_filter")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_5u25p"]
 resource_name = "game_start_transition"
-length = 5.0
+length = 2.5000000000000004
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -672,6 +738,66 @@ tracks/26/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("First Page/VBoxContainer/Single Player:mouse_filter")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("First Page/VBoxContainer/Multiplayer:mouse_filter")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("First Page/VBoxContainer/Settings:mouse_filter")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("First Page/VBoxContainer/Credits:mouse_filter")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("First Page/VBoxContainer/Quit:mouse_filter")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
 
 [sub_resource type="Animation" id="Animation_xk348"]
 resource_name = "press_any_key_button"
@@ -696,11 +822,6 @@ _data = {
 &"game_start_transition": SubResource("Animation_5u25p"),
 &"press_any_key_button": SubResource("Animation_xk348")
 }
-
-[sub_resource type="FontVariation" id="FontVariation_0nq6b"]
-base_font = ExtResource("2_xk348")
-spacing_glyph = 5
-spacing_space = 10
 
 [sub_resource type="FontVariation" id="FontVariation_503uy"]
 base_font = ExtResource("2_xk348")
@@ -738,7 +859,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="TextureRect" parent="Layer/Main Menu/First Page" unique_id=2099660958]
-self_modulate = Color(0.735357, 0.735357, 0.735357, 1)
+modulate = Color(0.26666668, 0.16862746, 0.20392157, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.16700001
@@ -748,7 +869,7 @@ offset_left = 0.35998535
 offset_right = -0.36010742
 offset_bottom = -0.040039063
 grow_horizontal = 2
-texture = ExtResource("1_bkf8a")
+texture = ExtResource("3_5u25p")
 
 [node name="Line Separation" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=572366400]
 modulate = Color(1, 1, 1, 0)
@@ -764,7 +885,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Line Separation2" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=2043108147]
@@ -780,7 +901,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Line Separation3" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=1947002077]
@@ -796,7 +917,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Line Separation4" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=814738395]
@@ -812,7 +933,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Line Separation5" type="ColorRect" parent="Layer/Main Menu/First Page/Title" unique_id=983532326]
@@ -826,11 +947,10 @@ grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Press Any Key" type="Button" parent="Layer/Main Menu/First Page" unique_id=1757829616]
-modulate = Color(0.49019608, 0.39607844, 0.49803922, 1)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -841,14 +961,17 @@ offset_top = 0.1199646
 offset_bottom = 0.15997314
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("FontVariation_0nq6b")
-theme_override_font_sizes/font_size = 26
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("FontVariation_503uy")
+theme_override_font_sizes/font_size = 27
 text = "Press any key to start"
 flat = true
 script = ExtResource("4_5u25p")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Layer/Main Menu/First Page" unique_id=1239331978]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -862,6 +985,7 @@ offset_right = 0.67993164
 offset_bottom = 0.23999023
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Single Player" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1647398188]
@@ -870,6 +994,9 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0.8, 1)
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource("FontVariation_503uy")
 theme_override_font_sizes/font_size = 27
 text = "Single Player"
@@ -881,7 +1008,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 1)
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 
 [node name="Multiplayer" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1410241268]
 layout_mode = 2
@@ -889,6 +1016,8 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource("FontVariation_503uy")
 theme_override_font_sizes/font_size = 27
 text = "Multiplayer
@@ -901,7 +1030,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 1)
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 
 [node name="Settings" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1958277270]
 layout_mode = 2
@@ -909,6 +1038,8 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource("FontVariation_503uy")
 theme_override_font_sizes/font_size = 27
 text = "Settings
@@ -921,7 +1052,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 1)
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 
 [node name="Credits" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=2005001357]
 layout_mode = 2
@@ -929,6 +1060,8 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource("FontVariation_503uy")
 theme_override_font_sizes/font_size = 27
 text = "Credits"
@@ -940,7 +1073,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 1)
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 
 [node name="Quit" type="Button" parent="Layer/Main Menu/First Page/VBoxContainer" unique_id=1254168449]
 layout_mode = 2
@@ -948,6 +1081,8 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource("FontVariation_503uy")
 theme_override_font_sizes/font_size = 27
 text = "Quit
@@ -960,7 +1095,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 1)
-color = Color(0.49019608, 0.39607844, 0.49803922, 1)
+color = Color(0.26666668, 0.16862746, 0.20392157, 1)
 
 [connection signal="pressed" from="Layer/Main Menu/First Page/Press Any Key" to="Layer/Main Menu/First Page/Press Any Key" method="_on_pressed"]
 [connection signal="tree_exited" from="Layer/Main Menu/First Page/Press Any Key" to="Layer/Main Menu" method="_on_press_any_key_tree_exited"]

@@ -16,7 +16,6 @@ config/version="0.0.3"
 run/main_scene="uid://b067p5ni752o8"
 config/features=PackedStringArray("4.8", "Forward Plus")
 run/max_fps=240
-config/icon="res://icon.svg"
 
 [audio]
 

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dsf3lb6rrpryk"]
 
-[ext_resource type="Texture2D" uid="uid://dw5efgb5jdi8o" path="res://textures/display_player_a.png" id="1_6iaf6"]
+[ext_resource type="Texture2D" uid="uid://dw5efgb5jdi8o" path="res://textures and fonts/Textures/display_player_a.png" id="1_6iaf6"]
 
 [sub_resource type="Image" id="Image_rxw1t"]
 data = {
