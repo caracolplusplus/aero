@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bo101edr6ekx" path="res://textures and fonts/Textures/multiplayer_title.png" id="3_tu8qx"]
 [ext_resource type="Texture2D" uid="uid://b7ubygmuhi4p5" path="res://textures and fonts/Textures/cactus.png" id="4_hghdc"]
 [ext_resource type="Texture2D" uid="uid://ce8bew8bl8rvq" path="res://textures and fonts/Textures/line_with_star_separatorpng.png" id="4_ugbcb"]
-[ext_resource type="Texture2D" uid="uid://c1n1fswp0y5bv" path="res://textures and fonts/Textures/tumbleweed_1.png" id="5_7g7ym"]
-[ext_resource type="Script" uid="uid://cc4f62ov1p2ni" path="res://scenes/menus/tumbleweed.gd" id="5_hghdc"]
 [ext_resource type="FontFile" uid="uid://cohd88kyj57fw" path="res://textures and fonts/Fonts/Montserrat/Montserrat-VariableFont_wght.ttf" id="5_s1ku0"]
 [ext_resource type="Texture2D" uid="uid://c6accx5bfdgdv" path="res://textures and fonts/Textures/host_button.png" id="6_8hd5u"]
 [ext_resource type="Texture2D" uid="uid://jqltkhp76pmx" path="res://textures and fonts/Textures/frame.png" id="6_n8u2c"]
@@ -15,221 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dflahd4s5lrc7" path="res://textures and fonts/Textures/input_box.png" id="8_7g7ym"]
 [ext_resource type="Texture2D" uid="uid://dd0x8fjy1jmn" path="res://textures and fonts/Textures/join_button.png" id="9_kpyag"]
 [ext_resource type="Texture2D" uid="uid://dq7sa0voovdwi" path="res://textures and fonts/Textures/back_button.png" id="9_n8u2c"]
-
-[sub_resource type="Animation" id="Animation_4vwct"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Tumbleweed:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1836.3999, 723.99994)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Tumbleweed:offset_transform_rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-6.2831855]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Tumbleweed:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.18, 0.18)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Tumbleweed:z_index")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_1euvk"]
-resource_name = "Tumbleweed_1"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Tumbleweed:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3392619, 0.6666, 0.8332, 1, 1.1268342, 1.300504, 1.4095525, 1.5186008, 1.8376687, 2),
-"transitions": PackedFloat32Array(1, 1, 0.9659363, 1, 1, 1, 1, 1, 0.8408964, 1, 1),
-"update": 0,
-"values": [Vector2(-268, 800), Vector2(88.971, 850), Vector2(433.39648, 929.60004), Vector2(608.693, 850.839), Vector2(784.2, 820), Vector2(903.266, 830), Vector2(1088.863, 865.887), Vector2(1205.401, 890), Vector2(1321.939, 929), Vector2(1662.92, 835), Vector2(1836.4, 800)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Tumbleweed:offset_transform_rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-6.2831855, 7.67944870877505]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Tumbleweed:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.16, 0.16)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Tumbleweed:z_index")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_8hd5u"]
-resource_name = "Tumbleweed_2"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Tumbleweed:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.2, 0.2)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Tumbleweed:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.0138247, 1.506498, 2),
-"transitions": PackedFloat32Array(1, 1.189207, 1, 1.3195081, 1),
-"update": 0,
-"values": [Vector2(-291, 890), Vector2(232.27026, 938), Vector2(779.5989, 881), Vector2(1299.8618, 949), Vector2(1820.9998, 890)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Tumbleweed:offset_transform_rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-6.2831855, 6.2831855]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Tumbleweed:z_index")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_hghdc"]
-resource_name = "Tumbleweed_3"
-length = 2.5000000000000004
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Tumbleweed:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.1, 0.1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Tumbleweed:z_index")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Tumbleweed:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.2708351, 0.39120626, 0.48900783, 0.609379, 0.7184653, 0.8839757, 1.1021484, 1.2488507, 1.3767451, 1.4670235, 1.6250106, 1.8130906, 2.0011704, 2.2720056, 2.3666666, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.96593636, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-140, 750), Vector2(8.999975, 769), Vector2(77.53479, 808), Vector2(174.2168, 766), Vector2(252.771, 760), Vector2(357.00003, 769), Vector2(437.071, 808), Vector2(570.00903, 780), Vector2(745.245, 808), Vector2(899.99994, 735), Vector2(965.00006, 713.99994), Vector2(1038.313, 720), Vector2(1160.547, 735), Vector2(1306.064, 808), Vector2(1459.9253, 808), Vector2(1681.4858, 760.00006), Vector2(1729, 741), Vector2(1868, 740)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Tumbleweed:offset_transform_rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-6.2831855, 9.381145]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4c5bl"]
-_data = {
-&"RESET": SubResource("Animation_4vwct"),
-&"Tumbleweed_1": SubResource("Animation_1euvk"),
-&"Tumbleweed_2": SubResource("Animation_8hd5u"),
-&"Tumbleweed_3": SubResource("Animation_hghdc")
-}
+[ext_resource type="Script" uid="uid://cciyx7kmnyts6" path="res://scripts/menus/tumbleweed_spawner.gd" id="14_8hd5u"]
 
 [sub_resource type="FontVariation" id="FontVariation_4vwct"]
 base_font = ExtResource("5_s1ku0")
@@ -265,6 +49,12 @@ texture = ExtResource("9_n8u2c")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hd5u"]
 texture = ExtResource("9_n8u2c")
 
+[sub_resource type="Curve2D" id="Curve2D_hghdc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -64, 864, 0, 0, 0, 0, -64, 1088)
+}
+point_count = 2
+
 [node name="Menu" type="Node" unique_id=1517633204]
 
 [node name="Layer" type="CanvasLayer" parent="." unique_id=1221287225]
@@ -278,24 +68,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5vtd7")
 metadata/_edit_use_anchors_ = true
-
-[node name="TumbleweedCooldown_1" type="Timer" parent="Layer/Multiplayer Menu" unique_id=447289652]
-one_shot = true
-autostart = true
-
-[node name="TumbleweedCooldown_2" type="Timer" parent="Layer/Multiplayer Menu" unique_id=639647130]
-wait_time = 2.0
-one_shot = true
-autostart = true
-
-[node name="Tumbleweed Animation_1" type="AnimationPlayer" parent="Layer/Multiplayer Menu" unique_id=1825699591]
-libraries/ = SubResource("AnimationLibrary_4c5bl")
-
-[node name="Tumbleweed Animation_2" type="AnimationPlayer" parent="Layer/Multiplayer Menu" unique_id=283563075]
-libraries/ = SubResource("AnimationLibrary_4c5bl")
-
-[node name="Tumbleweed Animation_3" type="AnimationPlayer" parent="Layer/Multiplayer Menu" unique_id=316585159]
-libraries/ = SubResource("AnimationLibrary_4c5bl")
 
 [node name="Background" type="TextureRect" parent="Layer/Multiplayer Menu" unique_id=10081493]
 layout_mode = 1
@@ -318,25 +90,8 @@ grow_vertical = 2
 texture = ExtResource("3_8hd5u")
 metadata/_edit_use_anchors_ = true
 
-[node name="Tumbleweed" type="TextureRect" parent="Layer/Multiplayer Menu" unique_id=899431909]
-self_modulate = Color(0.46666667, 0.29411766, 0.35686275, 0.72156864)
-z_index = 1
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 1836.3999
-offset_top = -356.00006
-offset_right = 3756.4019
-offset_bottom = 724.0
-grow_vertical = 0
-scale = Vector2(0.18, 0.18)
-offset_transform_enabled = true
-offset_transform_rotation = -6.2831855
-texture = ExtResource("5_7g7ym")
-script = ExtResource("5_hghdc")
-
 [node name="Cactus" type="TextureRect" parent="Layer/Multiplayer Menu" unique_id=38235685]
+z_index = 1
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -350,6 +105,7 @@ grow_vertical = 0
 texture = ExtResource("4_hghdc")
 
 [node name="Frame" type="TextureRect" parent="Layer/Multiplayer Menu" unique_id=189061691]
+z_index = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -464,6 +220,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Join a Lobby" type="Label" parent="Layer/Multiplayer Menu" unique_id=150312649]
 modulate = Color(0.26666668, 0.16862746, 0.20392157, 1)
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.42800003
@@ -483,6 +240,7 @@ text = "Join a Lobby"
 metadata/_edit_use_anchors_ = true
 
 [node name="Lobby Number" type="LineEdit" parent="Layer/Multiplayer Menu" unique_id=9517914]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.256
@@ -504,6 +262,7 @@ emoji_menu_enabled = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Join" type="Button" parent="Layer/Multiplayer Menu" unique_id=1253606342]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.49800003
@@ -525,7 +284,7 @@ text = "Join"
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="Layer/Multiplayer Menu" unique_id=1453344146]
-z_index = 1
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.057000004
@@ -547,5 +306,17 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8hd5u")
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="timeout" from="Layer/Multiplayer Menu/TumbleweedCooldown_1" to="Layer/Multiplayer Menu/Tumbleweed" method="_on_tumbleweed_cooldown_1_timeout"]
-[connection signal="timeout" from="Layer/Multiplayer Menu/TumbleweedCooldown_2" to="Layer/Multiplayer Menu/Tumbleweed" method="_on_tumbleweed_cooldown_2_timeout"]
+[node name="Tumbleweed Spawner" type="Path2D" parent="Layer/Multiplayer Menu" unique_id=113827785]
+position = Vector2(-128, 0)
+curve = SubResource("Curve2D_hghdc")
+script = ExtResource("14_8hd5u")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Layer/Multiplayer Menu/Tumbleweed Spawner" unique_id=1312294757]
+position = Vector2(-64, 1047.3619)
+rotation = 1.5707964
+progress = 183.344
+
+[node name="Tumbleweed Cooldown" type="Timer" parent="Layer/Multiplayer Menu/Tumbleweed Spawner" unique_id=1654857906]
+autostart = true
+
+[connection signal="timeout" from="Layer/Multiplayer Menu/Tumbleweed Spawner/Tumbleweed Cooldown" to="Layer/Multiplayer Menu/Tumbleweed Spawner" method="_on_tumbleweed_cooldown_timeout"]

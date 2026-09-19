@@ -1,30 +1,48 @@
 [gd_scene format=3 uid="uid://dqynrdy1fkfvk"]
 
-[ext_resource type="Texture2D" uid="uid://c1n1fswp0y5bv" path="res://textures and fonts/Textures/tumbleweed_1.png" id="1_6oy60"]
+[ext_resource type="Texture2D" uid="uid://c1n1fswp0y5bv" path="res://textures and fonts/Textures/tumbleweed.png" id="1_6oy60"]
+[ext_resource type="Script" uid="uid://bs5ljt68ghv8r" path="res://scripts/menus/tumbleweed.gd" id="1_kfav1"]
+[ext_resource type="Script" uid="uid://bdjg6pc4tmvk5" path="res://scenes/menus/floor.gd" id="1_xqnlc"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n2dsj"]
-bounce = 1.0
-absorbent = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20hrw"]
+size = Vector2(104, 8)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7hn0v"]
-radius = 353.06
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7hn0v"]
+bounce = 0.95
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n2dsj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6oy60"]
+radius = 50.0
 
-[node name="Tumbleweed" type="RigidBody2D" unique_id=1618654917]
-physics_material_override = SubResource("PhysicsMaterial_n2dsj")
+[node name="Tumbleweed" type="Control" unique_id=798321834]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1984166673]
-position = Vector2(0, -96)
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1670046195]
+script = ExtResource("1_xqnlc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1059402178]
+physics_interpolation_mode = 2
+position = Vector2(52, -4)
+shape = SubResource("RectangleShape2D_20hrw")
+
+[node name="Tumbleweed" type="RigidBody2D" parent="." unique_id=939751062]
+position = Vector2(50, -120)
+physics_material_override = SubResource("PhysicsMaterial_7hn0v")
+linear_velocity = Vector2(300, 0)
+constant_force = Vector2(500, 0)
+script = ExtResource("1_kfav1")
+
+[node name="Collision" type="CollisionShape2D" parent="Tumbleweed" unique_id=1351655967]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_6oy60")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tumbleweed/Collision" unique_id=1075533838]
+self_modulate = Color(0.46666667, 0.29411766, 0.35686275, 0.72156864)
+position = Vector2(0, -3)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_6oy60")
+offset = Vector2(0, -90)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=1881677873]
-position = Vector2(0, 96)
-shape = SubResource("CircleShape2D_7hn0v")
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Tumbleweed" unique_id=488796538]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665609947]
-position = Vector2(8, 624)
-shape = SubResource("WorldBoundaryShape2D_n2dsj")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=748918686]
-zoom = Vector2(0.1, 0.1)
+[connection signal="screen_exited" from="Tumbleweed/VisibleOnScreenNotifier2D" to="Tumbleweed" method="_on_visible_on_screen_notifier_2d_screen_exited"]

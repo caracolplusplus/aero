@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1n1fswp0y5bv"
-path="res://.godot/imported/tumbleweed_1.png-543a14d4678d0eb3692470bfbe417331.ctex"
+path="res://.godot/imported/tumbleweed.png-a15b5ddffa7225386918fd910cadadf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures and fonts/Textures/tumbleweed_1.png"
-dest_files=["res://.godot/imported/tumbleweed_1.png-543a14d4678d0eb3692470bfbe417331.ctex"]
+source_file="res://textures and fonts/Textures/tumbleweed.png"
+dest_files=["res://.godot/imported/tumbleweed.png-a15b5ddffa7225386918fd910cadadf1.ctex"]
 
 [params]
 
