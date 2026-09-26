@@ -319,4 +319,5 @@ progress = 183.344
 [node name="Tumbleweed Cooldown" type="Timer" parent="Layer/Multiplayer Menu/Tumbleweed Spawner" unique_id=1654857906]
 autostart = true
 
+[connection signal="pressed" from="Layer/Multiplayer Menu/Back" to="Layer/Multiplayer Menu" method="_on_back_pressed"]
 [connection signal="timeout" from="Layer/Multiplayer Menu/Tumbleweed Spawner/Tumbleweed Cooldown" to="Layer/Multiplayer Menu/Tumbleweed Spawner" method="_on_tumbleweed_cooldown_timeout"]

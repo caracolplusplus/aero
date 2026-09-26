@@ -2,12 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://c1n1fswp0y5bv" path="res://textures and fonts/Textures/tumbleweed.png" id="1_6oy60"]
 [ext_resource type="Script" uid="uid://bs5ljt68ghv8r" path="res://scripts/menus/tumbleweed.gd" id="1_kfav1"]
-[ext_resource type="Script" uid="uid://bdjg6pc4tmvk5" path="res://scenes/menus/floor.gd" id="1_xqnlc"]
+[ext_resource type="Script" uid="uid://bdjg6pc4tmvk5" path="res://scripts/menus/floor.gd" id="1_xqnlc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20hrw"]
 size = Vector2(104, 8)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7hn0v"]
+friction = 9.8
 bounce = 0.95
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6oy60"]

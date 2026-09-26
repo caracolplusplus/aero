@@ -26,6 +26,7 @@ buses/default_bus_layout="uid://bkwq4fnxthqly"
 Network="*uid://kko60kfae5xu"
 GameManager="*uid://b30b6axsewpj5"
 ConfigFileHandler="*uid://chslvmyieyg4h"
+GUIDE="*res://addons/guide/guide.gd"
 
 [display]
 
@@ -39,7 +40,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg", "res://addons/guide/plugin.cfg")
 
 [global_group]
 
